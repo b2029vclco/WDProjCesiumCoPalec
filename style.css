@@ -121,11 +121,11 @@ nav ul li a:hover {
 }
 
 .left-content p, .right-image p {
-    flex: 1;                   
-}
+    flex: 1px;
+}                 
 
 .side-image {
-    width: 26rem;              
+    width: 20rem;              
     height: auto;
     border-radius: 20px;
     box-shadow: 0 0.5rem 0.9rem #240303;
