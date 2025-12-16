@@ -145,10 +145,6 @@ nav ul li a:hover {
 
 
 
-footer a:hover {
-    text-decoration: underline;
-}
-
 nav ul li a {
     padding: 1rem;
     border-top: 3px solid #ffffff;
@@ -161,7 +157,7 @@ body {
     margin: 40px;
 }
 
-form {
+.quiz {
   max-width: 420px;
   margin: 40px auto;
   padding: 30px;
@@ -171,53 +167,55 @@ form {
   font-family: "Luminari", fantasy;
 }
 
+.question {
+  margin-bottom: 30px;
+}
 
-form h2 {
-  text-align: center;
+.question h3 {
   color: #ffffff;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
 }
 
+ 
+.quiz input[type="radio"], .quiz-form input[type="checkbox"] {
+  display: none;
+}
 
-label {
+.option {
   display: block;
-  margin-bottom: 6px;
-  color: #e6e6e6;
-  font-size: 0.9rem;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 18px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   background: #1a1a1a;
   border: 1px solid #2f0505;
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 0.95rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-
-input::placeholder, textarea::placeholder {
-color: #999;
-}
-
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
+.option:hover {
+  background: #240808;
   border-color: #5c0e0e;
-  box-shadow: 0 0 8px rgba(92, 14, 14, 0.6);
 }
 
+.quiz input:checked + .option {
+  background: linear-gradient(135deg, #2f0505, #5c0e0e);
+  border-color: #8a1a1a;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(92, 14, 14, 0.6);
+}
 
-button {
+.option:active {
+  transform: scale(0.98);
+}
+
+.quiz button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: linear-gradient(135deg, #2f0505, #5c0e0e);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: #ffffff;
   font-size: 1rem;
   font-weight: bold;
@@ -225,13 +223,13 @@ button {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover {
+.quiz button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(92, 14, 14, 0.6);
 }
 
-
-button:active {
+.quiz button:active {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(92, 14, 14, 0.4);
 }
+
