@@ -161,7 +161,7 @@ body {
   max-width: 420px;
   margin: 40px auto;
   padding: 30px;
-  background: #0d0d0d;
+  background: #1d040466;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(92, 14, 14, 0.4);
   font-family: "Luminari", fantasy;
@@ -183,6 +183,7 @@ body {
 }
 
 .option {
+  font-family: "Luminari", fantasy;
   display: block;
   padding: 14px 16px;
   margin-bottom: 12px;
@@ -211,6 +212,7 @@ body {
 }
 
 .quiz button {
+  font-family: "Luminari", fantasy;
   width: 100%;
   padding: 14px;
   background: linear-gradient(135deg, #2f0505, #5c0e0e);
