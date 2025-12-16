@@ -21,65 +21,121 @@
     <h1 class="header-box">A Guide to Demon Slaying</h1>
 
 
-    <div class="content">
-    <h2>「  KNYDEX 」</h2>
-    <br/>
-    <h2>「  What is your breathing style? 」</h2>
-    <br/>
-    <h2>「  Are you an introvert or extrovert, or both? 」</h2>    
-        <div class="left-content">
-            <button onclick="Introvert()">Introvert</button>
-            <button onclick="Extrovert()">Extrovert</button>
-            <button onclick="Ambivert()">Both</button>
-        </div>
-    <br/>
-    <h2>「  What’s your primary love language? 」</h2>
-        <div class="left-content">
-            <button onclick="Touch()">Touch</button>
-            <button onclick="Words()">Words</button>
-            <button onclick="Time()">Time</button>
-            <button onclick="Gifts()">Gifts</button>
-            <button onclick="Service()">Service</button>    
-        </div>
-    <br/>
-    <h2>「  Favorite Color 」</h2>
-        <div class="left-content">
-            <button onclick="WarmColor()">Warm Colors</button>    
-            <button onclick="CoolColor()">Cool Colors</button>
-            <button onclick="LightPastel()">Light Pastel Colors</button>
-        </div>        
-    <br/>
-    <h2>「  Which of these hobbies do you enjoy the most? 」</h2>
-        <div class="left-content">
-            <button onclick="Sleeping()">Sleeping</button>
-            <button onclick="Sports()">Sports</button>
-            <button onclick="Music()">Music</button>
-            <button onclick="ReadingWriting()">Reading/Writing</button>
-            <button onclick="SpendingTime()">Spending time with loved ones</button>
-        </div>
-    <br/>
-    <h2>「  Which of these lyrics speak to you? 」</h2>
-        <div class="left-content">
-            <button onclick="HeadinCloud()">"Head in the clouds, but my gravity centered"</button>
-            <button onclick="ButIfStory()">"But if the story's over, why am I still writing pages?"</button>
-            <button onclick="YouAndI()">"You and I have memories. Longer than the road that stretches out ahead."</button>
-            <button onclick="WordsFlowingOut()">"Words are flowing out like endless rain into a paper cup"</button>
-            <button onclick="TheWallsBroken()">"The Walls are being broken and we're ready for change"</button>
-        </div>      
-    <br/>
-    <h2>「  If you and a loved one were in danger, what would you do? 」</h2>        
-        <div class="left-content">
-            <button onclick="RunAway()">Run Away</button>
-            <button onclick="RushAttack()">Rush attack</button>
-            <button onclick="Protect()">Protect your loved one</button>
-            <button onclick="Strategy()">Strategically find a way to get out of trouble</button>    
-        </div>     
-        
-    <button onclick="checkIt()">Submit</button>
+  <div class="content">
+  <h2>「  KNYDEX  」</h2>
+  <br/>
+  <h2>「  What is your breathing style?  」</h2>
+
+  <div class="quiz">
+   
+    <div class="question">
+      <h3>Are you an introvert or extrovert, or both?</h3>
+      <label>
+        <button type="button" class="option" onclick="Introvert()">Introvert</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Extrovert()">Extrovert</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Ambivert()">Both</button>
+      </label>
+    </div>
+
+
+    <div class="question">
+      <h3>What’s your primary love language?</h3>
+      <label>
+        <button type="button" class="option" onclick="Touch()">Touch</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Words()">Words</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Time()">Time</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Gifts()">Gifts</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Service()">Service</button>
+      </label>
+    </div>
+
+    <div class="question">
+      <h3>Favorite Color</h3>
+      <label>
+        <button type="button" class="option" onclick="WarmColor()">Warm Colors</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="CoolColor()">Cool Colors</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="LightPastel()">Light Pastel Colors</button>
+      </label>
+    </div>
+
+    <div class="question">
+      <h3>Which of these hobbies do you enjoy the most?</h3>
+      <label>
+        <button type="button" class="option" onclick="Sleeping()">Sleeping</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Sports()">Sports</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Music()">Music</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="ReadingWriting()">Reading/Writing</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="SpendingTime()">Spending time with loved ones</button>
+      </label>
+    </div>
+
+
+    <div class="question">
+      <h3>Which of these lyrics speak to you?</h3>
+      <label>
+        <button type="button" class="option" onclick="HeadinCloud()">"Head in the clouds, but my gravity centered"</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="ButIfStory()">"But if the story's over, why am I still writing pages?"</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="YouAndI()">"You and I have memories. Longer than the road that stretches out ahead."</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="WordsFlowingOut()">"Words are flowing out like endless rain into a paper cup"</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="TheWallsBroken()">"The walls are being broken and we're ready for change"</button>
+      </label>
+    </div>
+
+
+    <div class="question">
+      <h3>If you and a loved one were in danger, what would you do?</h3>
+      <label>
+        <button type="button" class="option" onclick="RunAway()">Run Away</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="RushAttack()">Rush attack</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Protect()">Protect your loved one</button>
+      </label>
+      <label>
+        <button type="button" class="option" onclick="Strategy()">Strategically find a way to get out of trouble</button>
+      </label>
+    </div>
+
+
+    <button type="button" onclick="checkIt()">Submit</button>
 
     <h2>Result: <span id="result"></span></h2>
-
-    </section>
+  </div>
+</div>
 
 
     <script>
