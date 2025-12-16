@@ -73,7 +73,11 @@
             <button onclick="RushAttack()">Rush attack</button>
             <button onclick="Protect()">Protect your loved one</button>
             <button onclick="Strategy()">Strategically find a way to get out of trouble</button>    
-        </div>        
+        </div>     
+        
+    <button onclick="checkIt()">Submit</button>
+
+    <h2>Result: <span id="result"></span></h2>
 
     </section>
 
@@ -234,22 +238,64 @@
 
         var whichOne = {};
         whichOne[0] = Sun;
-        whichOne[1] = Moon;
-        whichOne[2] = Water;
-        whichOne[3] = Flame;
-        whichOne[4] = Stone;
-        whichOne[5] = Wind;
-        whichOne[6] = Insect;
-        whichOne[7] = Flower;
-        whichOne[8] = Mist;
-        whichOne[9] = Love;
-        whichOne[10] = Thunder;
-        whichOne[11] = Beast;
-        whichOne[12] = Sound;
-
-        let max = Math.max.apply(null, whichOne);
+        whichOne[1] = Water;
+        whichOne[2] = Flame;
+        whichOne[3] = Stone;
+        whichOne[4] = Wind;
+        whichOne[5] = Insect;
+        whichOne[6] = Flower;
+        whichOne[7] = Mist;
+        whichOne[8] = Love;
+        whichOne[9] = Thunder;
+        whichOne[10] = Beast;
+        whichOne[11] = Sound;
+        whichOne[12] = Serpent;
 
 
+        function checkIt() {
+            let max = Math.max.apply(null, whichOne);
+            if (max = whichOne[0]) {
+                resultElem.innerHTML = "You got Sun Breathing!";  
+            } 
+            else if (max = whichOne[1]) {
+                resultElem.innerHTML = "You got Water Breathing!"; 
+            } 
+            else if (max = whichOne[2]) {
+                resultElem.innerHTML = "You got Flame Breathing!"; 
+            } 
+            else if (max = whichOne[3]) {
+                resultElem.innerHTML = "You got Stone Breathing!"; 
+            } 
+            else if (max = whichOne[4]) {
+                resultElem.innerHTML = "You got Wind Breathing!"; 
+            } 
+            else if (max = whichOne[5]) {
+                resultElem.innerHTML = "You got Insect Breathing!"; 
+            } 
+            else if (max = whichOne[6]) {
+                resultElem.innerHTML = "You got Flower Breathing!"; 
+            } 
+            else if (max = whichOne[7]) {
+                resultElem.innerHTML = "You got Mist Breathing!"; 
+            } 
+            else if (max = whichOne[8]) {
+                resultElem.innerHTML = "You got Love Breathing!"; 
+            } 
+            else if (max = whichOne[9]) {
+                resultElem.innerHTML = "You got Thunder Breathing!"; 
+            } 
+            else if (max = whichOne[10]) {
+                resultElem.innerHTML = "You got Beast Breathing!"; 
+            } 
+            else if (max = whichOne[11]) {
+                resultElem.innerHTML = "You got Sound Breathing!"; 
+            }
+            else if (max = whichOne[12]) {
+                resultElem.innerHTML = "You got Serpent Breathing!"; 
+            }
+
+        }
+        
 
 
 
