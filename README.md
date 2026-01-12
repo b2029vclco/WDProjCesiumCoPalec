@@ -32,3 +32,17 @@
 #### ![P4](https://github.com/b2029vclco/WDProjSectionCoPalec/blob/main/all_images/4.png?raw=true)
 #### Upper Moons and Muzan Info:
 #### ![P5](https://github.com/b2029vclco/WDProjSectionCoPalec/blob/main/all_images/5.png?raw=true)
+
+## Quarter 3 Project Proposal
+
+#### Home Page:
+#### ![P1](all_images\Q3ProjectProposal1.png)
+#### Slayers/Demons/Styles General Homepage Page:
+#### ![P1](all_images\Q3ProjectProposal2.png)
+#### Slayers/Demons/Styles Individual Info Page:
+#### ![P1](all_images\Q3ProjectProposal3.png)
+#### Quiz Layout:
+#### ![P1](all_images\Q3ProjectProposal4.png)
+
+#### Narrative:
+#### The breathing style quiz aims to determine the most suitable breathing technique for the user through a series of questions. Taking this quiz will assist the user in their training and their journey to becoming a slayer. In the event of an emergency–such as closing the quiz tab, refreshing on accident, or losing WiFi, the form will automatically save your answers so you have progress to get back to.
