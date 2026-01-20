@@ -1,19 +1,15 @@
 .main {
   font-family: "Luminari", fantasy;
-  font-weight: 400;
-  font-style: normal;
-  font-optical-sizing: auto;
   margin: 0;
-  padding: 2.3rem;
-  background: linear-gradient(to bottom, #460f0fae, #9123239e), url(all_images/background.jpg);
-  background-repeat: repeat; 
-  background-position: center;
-  background-size: auto;  
+  padding: 0;
+  background:linear-gradient(rgba(35, 5, 5, 0.85),rgba(90, 15, 15, 0.85)),url(all_images/background.jpg);
+  background-repeat: repeat;
   background-attachment: fixed;
-  color:  #ffffff;
-  line-height: 1.6;
-  animation: fadeIn 1.0s ease-in forwards;
+  color: #f3eded;
+  line-height: 1.8;
+  animation: fadeIn 1s ease forwards;
 }
+
 
  @keyframes fadeIn {
     from { opacity: 0; }
@@ -46,15 +42,16 @@ header h2 {
 }
 
 .header-box {
-    text-align: center;
-    border: 1rem;
-    max-width: 26rem;         
-    margin: 4rem auto;        
-    padding: 1.5rem 3rem;       
-    background: rgba(69, 5, 5, 0.623);         
-    border-radius: 15px;       
-    box-shadow: 0 4px 10px rgba(35, 3, 3, 0.5); 
+  max-width: 520px;
+  margin: 6rem auto 4rem;
+  padding: 1.8rem 3rem;
+  background: linear-gradient(145deg, #7a1b1b, #4a0c0c);
+  border-left: 5px solid rgba(241, 107, 107, 0.849);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(30, 10, 10, 0.615), inset 0 0 40px rgba(192, 10, 10, 0.26);
+  text-align: center;
 }
+
 
 nav {
     background-color: #2f0505;
@@ -76,27 +73,25 @@ nav ul li {
     margin: 0;
 }
 
+.navbar {
+  background: rgba(25, 5, 5, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
 nav ul li a {
-    display: block;
-    color: rgb(255, 255, 255);
-    padding: 0;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 0;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
 }
 
 nav ul li a:hover {
-    background-color: #1d040466;
-    text-decoration: underline;
+  opacity: 1;
+  text-decoration: underline;
 }
 
-.navbar {
-    padding: 0 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999; 
-    box-shadow: 0 0.8rem 2rem rgba(17, 0, 0, 0.609);
-}
 
   
 .content {
@@ -114,27 +109,56 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-.left-content, .right-image {
-    display: flex;             
-    align-items: center;       
-    gap: 1.5rem;
-    margin-bottom: 2rem;              
+.left-content {
+  display: block;
 }
 
-.left-content p, .right-image p {
-    flex: 1px;
-}                 
+
+
+.left-content img {
+  flex-shrink: 0;
+}
+
+
+.left-content p {
+  max-width: 900px; 
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  opacity: 0.95;
+}
+
+           
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;             
+  margin-bottom: 2.5rem;
+}
+
+.title-row h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;    
+}
 
 .side-image {
-    width: 20rem;              
+    width: 120px;       
     height: auto;
-    border-radius: 20px;
-    transition: 0.5s;
+    flex-shrink: 0;    
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .side-image:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
+
+
 
 .right-image {
     display: flex;
@@ -401,53 +425,59 @@ body {
 
 .homepage {
   max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 24px;
-  font-family: "Luminari", fantasy;
+  margin: 0 auto 80px;
+  padding: 0 32px;
 }
+
 
 
 .home {
   display: flex;
+  justify-content: center; 
   align-items: center;
-  justify-content: space-between;
   gap: 40px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 
 .home-content {
-  flex: 1 1 400px; 
-  background:  linear-gradient(90deg, #5c0e0f, #cc5151);
-  padding: 32px;
-  border-radius: 22px;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+  background:linear-gradient(135deg,rgba(140, 30, 30, 0.95),rgba(70, 10, 10, 0.95));
+  padding: 3.5rem;
+  border-radius: 26px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.7),inset 0 0 60px rgba(0,0,0,0.3);
 }
 
+
 .home-content h1 {
-  font-size: 2.6rem;
-  font-weight: 800;
-  margin: 0 0 8px;
-  color: #ffffff;
+
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .home-content p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #ffffff;
+    max-width: 880px;    
+    margin: 0 auto 3rem;    
+    text-align: center;      
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: 0.95;
 }
+
 
 
 
 .quote-box {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  padding: 18px 28px;
-  background: #5c0e0f;
-  border-radius: 999px;
-  text-align: center;
-  font-weight: 700;
-  color: #ffffff;
+    max-width: 720px;
+    margin: 0 auto 4rem; 
+    padding: 1.2rem 2.5rem;
+    background: rgba(40,5,5,0.6);
+    border-radius: 999px;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    text-align: center;
+    opacity: 0.85;
 }
 
 
