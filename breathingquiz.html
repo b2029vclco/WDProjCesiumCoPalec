@@ -9,467 +9,501 @@
 </head>
 
 <body class="main">
-    <nav class ="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="hashirainfo.html">Slayers</a></li>
-            <li><a href="upper+muzan.html">Demons</a></li>
-            <li><a href="breathingstyleinfo.html">Breathing Styles</a></li>
-            <li><a href="breathingquiz.html">Your Breathing Style</a></li>
-        </ul>
-    </nav>
-    <h1 class="header-box">A Guide to Demon Slaying</h1>
+  <nav class ="navbar">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hashirainfo.html">Slayers</a></li>
+          <li><a href="upper+muzan.html">Demons</a></li>
+          <li><a href="breathingstyleinfo.html">Breathing Styles</a></li>
+          <li><a href="breathingquiz.html">Your Breathing Style</a></li>
+      </ul>
+  </nav>
+  <h1 class="header-box">A Guide to Demon Slaying</h1>
 
 
   <div class="content">
-  <h2>「  KNYDEX  」</h2>
-  <br/>
-  <h2>「  What is your breathing style?  」</h2>
+    <h2>「  KNYDEX  」</h2>
+    <br/>
+    <h2>「  What is your breathing style?  」</h2>
 
-  <form id="dForm" method="post" onsubmit = "confirmSubmission(event)" onreset = "confirmReset(event)">
+    <form id="dForm" method="post" onsubmit = "checkIt(event)" onreset = "confirmReset(event)">
 
-    <div class="quiz">
-    <div class="container">
-      <div class="radio-group">
-        <p class="question">Are you an introvert, extrovert, or both?</p>
+      <div class="quiz">
+      <div class="container">
+        <div class="radio-group">
+          <p class="question">Are you an introvert, extrovert, or both?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Personality" id="introvert" value="introvert" >
+            <span class="checkmark"></span>
+            Introvert
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Personality" id="extrovert" value="extrovert" >
+            <span class="checkmark"></span>
+            Extrovert
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" name="Personality" id="both" value="both" >
+            <span class="checkmark"></span>
+            Both
+          </label>        
+        </div>
+
+        <div class="radio-group">
+          <p class="question">What's your primary love language?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Love" id="touch" value="touch">
+            <span class="checkmark"></span>
+            Touch
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Love" id="words" value="words">
+            <span class="checkmark"></span>
+            Words
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" name="Love" id="time" value="time">
+            <span class="checkmark"></span>
+            Time
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Love" id="gifts" value="gifts">
+            <span class="checkmark"></span>
+            Gifts
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Love" id="service" value="service">
+            <span class="checkmark"></span>
+            Service
+          </label>        
+        </div>
+
+        <div class="radio-group">
+          <p class="question">Favorite Color?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Color" id="warm" value="warm">
+            <span class="checkmark"></span>
+            Warm Colors
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Color" id="cool" value="cool">
+            <span class="checkmark"></span>
+            Cool Colors
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" name="Color" id="pastel" value="pastel">
+            <span class="checkmark"></span>
+            Light Pastel Colors
+          </label>     
+        </div>  
         
-        <label class="custom-radio">
-          <input type="radio" name="Personality" id="introvert">
-          <span class="checkmark"></span>
-          Introvert
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Personality" id="introvert">
-          <span class="checkmark"></span>
-          Extrovert
-        </label>
+        <div class="radio-group">
+          <p class="question">Which of these hobbies do you enjoy the most?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Hobby" id="sleeping" value="sleeping">
+            <span class="checkmark"></span>
+            Sleeping
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Hobby" id="sports" value="sports">
+            <span class="checkmark"></span>
+            Sports
+          </label>
 
-        <label class="custom-radio">
-          <input type="radio" name="Personality" id="introvert">
-          <span class="checkmark"></span>
-          Both
-        </label>        
+          <label class="custom-radio">
+            <input type="radio" name="Hobby" id="music" value="music">
+            <span class="checkmark"></span>
+            Music
+          </label>     
+
+          <label class="custom-radio">
+            <input type="radio" name="Hobby" id="reading" value="reading">
+            <span class="checkmark"></span>
+            Reading/Writing
+          </label>     
+          
+          <label class="custom-radio">
+            <input type="radio" name="Hobby" id="spendingtime" value="spendingtime">
+            <span class="checkmark"></span>
+            Spending time with loved ones
+          </label>             
+        </div>
+
+        <div class="radio-group">
+          <p class="question">Which of these lyrics speak to you?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Lyrics" id="lyric1" value="lyric1">
+            <span class="checkmark"></span>
+            "Head in the clouds, but my gravity centered"
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Lyrics" id="lyric2" value="lyric2">
+            <span class="checkmark"></span>
+            "But if the story's over, why am I still writing pages?"
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" name="Lyrics" id="lyric3" value="lyric3">
+            <span class="checkmark"></span>
+            "You and I have memories. Longer than the road that stretches out ahead."
+          </label>     
+
+          <label class="custom-radio">
+            <input type="radio" name="Lyrics" id="lyric4" value="lyric4">
+            <span class="checkmark"></span>
+            "Words are flowing out like endless rain into a paper cup"
+          </label>     
+          
+          <label class="custom-radio">
+            <input type="radio" name="Lyrics" id="lyric5" value="lyric5">
+            <span class="checkmark"></span>
+            "The walls are being broken and we're ready for change"
+          </label>             
+        </div>     
+        
+        <div class="radio-group">
+          <p class="question">If you and a loved one were in danger, what would you do?</p>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Danger" id="runaway" value="runaway">
+            <span class="checkmark"></span>
+            Run Away
+          </label>
+          
+          <label class="custom-radio">
+            <input type="radio" name="Danger" id="rushattack" value="rushattack">
+            <span class="checkmark"></span>
+            Rush and Attack
+          </label>
+
+          <label class="custom-radio">
+            <input type="radio" name="Danger" id="protect" value="protect">
+            <span class="checkmark"></span>
+            Protect your loved one
+          </label>     
+
+          <label class="custom-radio">
+            <input type="radio" name="Danger" id="strategy" value="strategy">
+            <span class="checkmark"></span>
+            Strategically find a way to get out of trouble
+          </label>               
+        </div>           
       </div>
 
-      <div class="radio-group">
-        <p class="question">What's your primary love language?</p>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Love" id="introvert">
-          <span class="checkmark"></span>
-          Touch
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Love" id="introvert">
-          <span class="checkmark"></span>
-          Words
-        </label>
 
-        <label class="custom-radio">
-          <input type="radio" name="Love" id="introvert">
-          <span class="checkmark"></span>
-          Time
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Love" id="introvert">
-          <span class="checkmark"></span>
-          Gifts
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Love" id="introvert">
-          <span class="checkmark"></span>
-          Service
-        </label>        
-      </div>
+      <button type="submit">Show Results</button>
 
-      <div class="radio-group">
-        <p class="question">Favorite Color?</p>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Color" id="introvert">
-          <span class="checkmark"></span>
-          Warm Colors
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Color" id="introvert">
-          <span class="checkmark"></span>
-          Cool Colors
-        </label>
-
-        <label class="custom-radio">
-          <input type="radio" name="Color" id="introvert">
-          <span class="checkmark"></span>
-          Light Pastel Colors
-        </label>     
-      </div>  
-      
-      <div class="radio-group">
-        <p class="question">Which of these hobbies do you enjoy the most?</p>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Hobby" id="introvert">
-          <span class="checkmark"></span>
-          Sleeping
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Hobby" id="introvert">
-          <span class="checkmark"></span>
-          Sports
-        </label>
-
-        <label class="custom-radio">
-          <input type="radio" name="Hobby" id="introvert">
-          <span class="checkmark"></span>
-          Music
-        </label>     
-
-        <label class="custom-radio">
-          <input type="radio" name="Hobby" id="introvert">
-          <span class="checkmark"></span>
-          Reading/Writing
-        </label>     
-        
-        <label class="custom-radio">
-          <input type="radio" name="Hobby" id="introvert">
-          <span class="checkmark"></span>
-          Spending time with loved ones
-        </label>             
-      </div>
-
-      <div class="radio-group">
-        <p class="question">Which of these lyrics speak to you?</p>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Lyrics" id="introvert">
-          <span class="checkmark"></span>
-          "Head in the clouds, but my gravity centered"
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Lyrics" id="introvert">
-          <span class="checkmark"></span>
-          "But if the story's over, why am I still writing pages?"
-        </label>
-
-        <label class="custom-radio">
-          <input type="radio" name="Lyrics" id="introvert">
-          <span class="checkmark"></span>
-          "You and I have memories. Longer than the road that stretches out ahead."
-        </label>     
-
-        <label class="custom-radio">
-          <input type="radio" name="Lyrics" id="introvert">
-          <span class="checkmark"></span>
-          "Words are flowing out like endless rain into a paper cup"
-        </label>     
-        
-        <label class="custom-radio">
-          <input type="radio" name="Lyrics" id="introvert">
-          <span class="checkmark"></span>
-          "The walls are being broken and we're ready for change"
-        </label>             
-      </div>     
-      
-      <div class="radio-group">
-        <p class="question">If you and a loved one were in danger, what would you do?</p>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Danger" id="introvert">
-          <span class="checkmark"></span>
-          Run Away
-        </label>
-        
-        <label class="custom-radio">
-          <input type="radio" name="Danger" id="introvert">
-          <span class="checkmark"></span>
-          Rush and Attack
-        </label>
-
-        <label class="custom-radio">
-          <input type="radio" name="Danger" id="introvert">
-          <span class="checkmark"></span>
-          Protect your loved one
-        </label>     
-
-        <label class="custom-radio">
-          <input type="radio" name="Danger" id="introvert">
-          <span class="checkmark"></span>
-          Strategically find a way to get out of trouble
-        </label>               
-      </div>           
-    </div>
-
-
-    <button type="submit" onclick="checkIt()">Submit</button>
-
-    </div>
-  </form>
-
+    </form>
     <h2>Result: <span id="result"></span></h2>
+ 
   </div>
-</div>
+
+  <script>
+
+    var Water = 0;
+    var Insect = 0;
+    var Mist = 0;
+    var Serpent = 0;
+    var Flower = 0;
+    var Flame = 0;
+    var Love = 0;
+    var Sound = 0;
+    var Beast = 0;
+    var Thunder = 0;
+    var Sun = 0;
+    var Wind = 0;
+    var Stone = 0;
+
+    function Introvert() {
+        Water = Water + 1; 
+        Insect = Insect + 1;
+        Mist = Mist + 1;
+        Serpent = Serpent + 1;
+        Flower = Flower + 1;
+    }
+    function Extrovert() {
+        Flame = Flame + 1;
+        Love = Love + 1;
+        Beast = Beast + 1;
+        Thunder = Thunder + 1;
+    }        
+    function Ambivert() {
+        Sun = Sun + 1;
+        Wind = Wind + 1;
+        Stone = Stone + 1;
+        Sound = Sound + 1;
+    }
+    function Touch() {
+        Love = Love + 1;
+        Beast = Beast + 1;
+    }
+    function Words() {
+        Insect = Insect + 1; 
+        Flower = Flower + 1;
+        Sound = Sound + 1;
+    }
+    function Time() {
+        Mist = Mist + 1; 
+        Thunder = Thunder + 1;
+        Water = Water + 1;
+
+    }
+    function Gifts() {
+        Wind = Wind + 1;
+        Serpent = Serpent + 1;
+    }
+    function Service() {
+        Stone = Stone + 1;
+        Flame = Flame + 1;
+        Sun = Sun + 1;
+
+    }       
+    function WarmColor() {
+        Sun = Sun + 1; 
+        Flame = Flame + 1;
+        Thunder = Thunder + 1;
+        Stone = Stone + 1;
+        Beast = Beast + 1;
+
+    }
+    function CoolColor() {
+        Serpent = Serpent + 1; 
+        Water = Water + 1;
+        Mist = Mist + 1;
+        Insect = Insect + 1;
+
+    }
+    function LightPastel() {
+        Love = Love + 1; 
+        Flower = Flower + 1;
+        Wind = Wind + 1;
+        Sound = Sound + 1;
+
+    }                 
+    function Sleeping() {
+        Mist = Mist + 1; 
+        Thunder = 0;
+    }
+    function Sports() {
+        Beast = Beast + 1; 
+        Flame = Flame + 1;
+        Stone = Stone + 1;
+        Wind = Wind + 1;
+    }        
+    function Music() {
+        Sound = Sound + 1; 
+        Water = Water + 1;
+    }
+    function ReadingWriting() {
+        Insect = Insect + 1; 
+        Serpent = Serpent + 1;
+    }
+    function SpendingTime() {
+        Love = Love + 1;
+        Flower = Flower + 1;
+        Sun = Sun + 1;
+
+    }
+    function HeadinCloud() {
+        Mist = Mist + 1; 
+        Thunder = Thunder + 1;
+    }
+    function ButIfStory() {
+        Serpent = Serpent + 1;
+        Wind = Wind + 1;
+        Insect = Insect + 1;
+    }
+    function YouAndI() {
+        Sun = Sun + 1; 
+        Love = Love + 1;
+    }
+    function WordsFlowingOut() {
+        Water = Water + 1; 
+        Flower = Flower + 1;
+        Sound = Sound + 1;
+
+    }
+    function TheWallsBroken() {
+        Beast = Beast + 1; 
+        Stone = Stone + 1;
+        Flame = Flame + 1;
+
+    }
+    function RunAway() {
+        Thunder = Thunder + 1; 
+        Sound = Sound + 1;
+        Mist = Mist + 1;                                                               
+
+    }
+    function RushAttack() {
+        Beast = Beast + 1; 
+        Wind = Wind + 1;
+    }
+    function Protect() {
+        Flame = Flame + 1; 
+        Love = Love + 1;
+        Flower = Flower + 1;
+        Stone = Stone + 1;
+        Sun = Sun + 1;
+    }
+    function Strategy() {
+        Insect = Insect + 1;
+        Water = Water + 1;
+        Serpent = Serpent + 1;
+    }
+
+    const questionNames = ["Personality", "Love", "Color", "Hobby", "Lyrics", "Danger"];
+
+    const funcMapping = 
+      {
+        "introvert": Introvert,
+        "extrovert": Extrovert,
+        "both": Ambivert,
+        "touch": Touch,
+        "words": Words,
+        "time": Time,
+        "gifts": Gifts,
+        "service": Service,
+        "warm": WarmColor,
+        "cool": CoolColor,
+        "pastel": LightPastel,
+        "sleeping": Sleeping,
+        "sports": Sports,
+        "music": Music,
+        "reading": ReadingWriting,
+        "spendingtime": SpendingTime,
+        "lyric1": HeadinCloud,
+        "lyric2": ButIfStory,
+        "lyric3": YouAndI,
+        "lyric4": WordsFlowingOut,
+        "lyric5": TheWallsBroken,
+        "runaway": RunAway,
+        "rushattack": RushAttack,
+        "protect": Protect,
+        "strategy": Strategy,
+      }
+
+    function addTotals() {
+      Water = 0;
+      Insect = 0;
+      Mist = 0;
+      Serpent = 0;
+      Flower = 0;
+      Flame = 0;
+      Love = 0;
+      Sound = 0;
+      Beast = 0;
+      Thunder = 0;
+      Sun = 0;
+      Wind = 0;
+      Stone = 0;
+
+      for (const key in funcMapping)
+        if (document.getElementById(key).checked) {
+          funcMapping[key]();                      
+        }   
+    }
 
 
-    <script>
-      function confirmSubmission(event){
-        const userConfirmed = confirm("Are you sure you want to submit this form?");
-        if (userConfirmed)
+
+    function hasAnswer(name) {
+
+      let choices = document.getElementsByName(name);
+      for (const choice of choices)
+      {
+        if (choice.checked)
+          return true;
+
+      }
+      return false;
+
+    }
+
+
+    function checkIt() {
+
+      event.preventDefault();
+      for (const name of questionNames)
+        if (!hasAnswer(name))
         {
-          event.preventDefault();
-          saveToLocal();
-          alert("Form submission saved.");
+          alert("Please answer all the questions for us to make our best judgement!");
+          return;
+        }
 
-          //reset the fields for new input
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;
-          document.getElementById('intern').checked = false;
-          document.getElementById('extern').checked = false;                                                            
-        }
-      
-        if (!userConfirmed) {
-            event.preventDefault();
-            alert("Form submission cancelled.");
-        }
+      addTotals();
+
+      var whichOne = [];
+      whichOne[0] = Sun;
+      whichOne[1] = Water;
+      whichOne[2] = Flame;
+      whichOne[3] = Stone;
+      whichOne[4] = Wind;
+      whichOne[5] = Insect;
+      whichOne[6] = Flower;
+      whichOne[7] = Mist;
+      whichOne[8] = Love;
+      whichOne[9] = Thunder;
+      whichOne[10] = Beast;
+      whichOne[11] = Sound;
+      whichOne[12] = Serpent;
+      var max = Math.max(...whichOne);
+      var resultElem = document.getElementById("result");
+      if (max == whichOne[0]) {
+          resultElem.innerHTML = "As warm as the sun, and as strong as the flames—you are meant to use the <b>Sun Breathing</b> technique. You wish to make a change for the better, most likely because of someone else. You are talented, hardworking, and selfless—ready to fight demons head-on. As you go down this path, you will experience a lot of conflict and challenges, but you are destined to make a great impact on the world and the people around you.";  
       } 
+      else if (max == whichOne[1]) {
+          resultElem.innerHTML = "Calm and steady—you are meant to use the <b>Water Breathing</b> technique. You are versatile but defensive, which may cause you to be a bit closed off. You may be burdened by the events of the past, but know that you are important. You are worth everything, whether or not you acknowledge that fact. The only thing setting you back is yourself."; 
+      } 
+      else if (max == whichOne[2]) {
+          resultElem.innerHTML = "With a heart as warm as fire, you are meant to use the <b>Flame Breathing</b> technique. You are passionate, kind, and determined to fight for what you stand for. You are an inspiration to others—a guiding light through the dark. You are strong, but not versatile. Regardless, you choose to persevere."; 
+      } 
+      else if (max == whichOne[3]) {
+          resultElem.innerHTML = "As powerful as the Earth itself, you are meant to use the <b>Stone Breathing</b> technique. You are strong—much more than others, yet underneath that strong exterior is a heart full of kindness and compassion. You are a guiding figure and a capable leader—always aiming to make a difference. You might have been hurt or betrayed in the past, but with fortitude as strong as stone, you remain calm and push forward."; 
+      } 
+      else if (max == whichOne[4]) {
+          resultElem.innerHTML = "With a spirit as driven as the winds, you are meant to use the <b>Wind Breathing</b> technique. You are rather impulsive, always preferring to fight head-on. You may struggle in your defenses—or yourself in general, which is why you choose to attack instead. You are strong, but you often take risks because you struggle to regulate yourself. Regardless, your loyalty and strength is what makes others place their trust in you."; 
+      } 
+      else if (max == whichOne[5]) {
+          resultElem.innerHTML = "As precise as a bug's sting—you are meant to use the <b>Insect Breathing</b> technique. You may not be that strong in comparison to others, but you are highly intelligent and effective. People tend to underestimate you, but this gives you the upper hand to strike unexpectedly. You are graceful, compassionate, and sharp—but beneath all of that is something hidden, which may or may not be due to a burden of the past."; 
+      } 
+      else if (max == whichOne[6]) {
+          resultElem.innerHTML = "As soft as a fragrant petal, you are meant to use the <b>Flower Breathing</b> technique. You are skilled, elegant, and intuitive, known for being kind but not weak. You may prefer precision and accuracy over brute force, which reflects your discipline, mastery, attention to detail. You may tend to sacrifice yourself quietly, but know that your sacrifices are not in vain. Much like a deadly flower with a delicate appearance, you are sweet and compassionate, but you are able strike with sudden lethality."; 
+      } 
+      else if (max == whichOne[7]) {
+          resultElem.innerHTML = "As unpredictable as the weather, you are meant to use the <b>Mist Breathing</b> technique. You are swift and volatile, an advantage you have over others. You are rather talented, always following your natural instincts. However, this may cause you to drift without direction. You may be a bit detached in comparison to others, but that does not make you cold or uncaring–more so calm and steady. As of the moment, you may struggle to define yourself beyond your ability, but as you grow, you will learn more about yourself."; 
+      } 
+      else if (max == whichOne[8]) {
+          resultElem.innerHTML = "As sweet as love at first sight, you are meant to use the <b>Love Breathing</b> technique. You are highly adaptable and flexible, and rather spontaneous. Many people admire you for your openness and your ideals, however, this leads people to perceive you as vulnerable and weak. Though, you are not to be underestimated, as you are strong and resilient when motivated and inspired by others."; 
+      } 
+      else if (max == whichOne[9]) {
+          resultElem.innerHTML = "Swift like lightning, you are meant to use the <b>Thunder Breathing</b> technique. You have a strong foundation and focus, and you are capable of overwhelming others in an instant. However, you tend to thrive mainly under pressure, because you are rather reactive. At times, you become predictable, but your speed makes up for it. You may suffer from self-doubt, but even so, you are decisive, quick-thinker. "; 
+      } 
+      else if (max == whichOne[10]) {
+          resultElem.innerHTML = "Wild like an animal, you are meant to use the <b>Beast Breathing</b> technique. You are highly instinctive and aware, however, this may cause you to become reckless and impulsive. This makes you unpredictable, which is your advantage against others. You may lack refinement and efficiency, but your resilience allows you to get past any situation."; 
+      } 
+      else if (max == whichOne[11]) {
+          resultElem.innerHTML = "In tune like a musical score, you are meant to use the <b>Sound Breathing</b> technique. You are perceptive, having exceptional rhythm and timing. You are confident, but also commanding–balancing flair with responsibility. Though, at times, you may become overconfident, or your pride may cause you to hide your pain behind bravado. Nevertheless, your strategic and intuitive thinking is what makes you incredibly reliable."; 
+      }
+      else if (max == whichOne[12]) {
+          resultElem.innerHTML = "As sly as a snake, you are meant to use the <b>Serpent Breathing</b> technique. You are cunning and strategic, which is what allows you to achieve your fixated goals. However, when pushed, you become incredibly decisive and ruthless. You prefer to be efficient and strict, which may instill fear in those around you. Your rigidity is both a strength and a weakness."; 
+      }
 
+    }
 
-        var Water = 0;
-        var Insect = 0;
-        var Mist = 0;
-        var Serpent = 0;
-        var Flower = 0;
-        var Flame = 0;
-        var Love = 0;
-        var Sound = 0;
-        var Beast = 0;
-        var Thunder = 0;
-        var Sun = 0;
-        var Wind = 0;
-        var Stone = 0;
-
-        function Introvert() {
-            Water = Water + 1; 
-            Insect = Insect + 1;
-            Mist = Mist + 1;
-            Serpent = Serpent + 1;
-            Flower = Flower + 1;
-        }
-        function Extrovert() {
-            Flame = Flame + 1;
-            Love = Love + 1;
-            Beast = Beast + 1;
-            Thunder = Thunder + 1;
-        }        
-        function Ambivert() {
-            Sun = Sun + 1;
-            Wind = Wind + 1;
-            Stone = Stone + 1;
-            Sound = Sound + 1;
-        }
-        function Touch() {
-            Love = Love + 1;
-            Beast = Beast + 1;
-        }
-        function Words() {
-            Insect = Insect + 1; 
-            Flower = Flower + 1;
-            Sound = Sound + 1;
-        }
-        function Time() {
-            Mist = Mist + 1; 
-            Thunder = Thunder + 1;
-            Water = Water + 1;
-
-        }
-        function Gifts() {
-            Wind = Wind + 1;
-            Serpent = Serpent + 1;
-        }
-        function Service() {
-            Stone = Stone + 1;
-            Flame = Flame + 1;
-            Sun = Sun + 1;
-
-        }       
-        function WarmColor() {
-            Sun = Sun + 1; 
-            Flame = Flame + 1;
-            Thunder = Thunder + 1;
-            Stone = Stone + 1;
-            Beast = Beast + 1;
-
-        }
-        function CoolColor() {
-            Serpent = Serpent + 1; 
-            Water = Water + 1;
-            Mist = Mist + 1;
-            Insect = Insect + 1;
-
-        }
-        function LightPastel() {
-            Love = Love + 1; 
-            Flower = Flower + 1;
-            Wind = Wind + 1;
-            Sound = Sound + 1;
-
-        }                 
-        function Sleeping() {
-            Mist = Mist + 1; 
-            Thunder = 0;
-        }
-        function Sports() {
-            Beast = Beast + 1; 
-            Flame = Flame + 1;
-            Stone = Stone + 1;
-            Wind = Wind + 1;
-        }        
-        function Music() {
-            Sound = Sound + 1; 
-            Water = Water + 1;
-        }
-        function ReadingWriting() {
-            Insect = Insect + 1; 
-            Serpent = Serpent + 1;
-        }
-        function SpendingTime() {
-            Love = Love + 1;
-            Flower = Flower + 1;
-            Sun = Sun + 1;
-
-        }
-        function HeadinCloud() {
-            Mist = Mist + 1; 
-            Thunder = Thunder + 1;
-        }
-        function ButIfStory() {
-            Serpent = Serpent + 1;
-            Wind = Wind + 1;
-            Insect = Insect + 1;
-        }
-        function YouAndI() {
-            Sun = Sun + 1; 
-            Love = Love + 1;
-        }
-        function WordsFlowingOut() {
-            Water = Water + 1; 
-            Flower = Flower + 1;
-            Sound = Sound + 1;
-
-        }
-        function TheWallsBroken() {
-            Beast = Beast + 1; 
-            Stone = Stone + 1;
-            Flame = Flame + 1;
-
-        }
-        function RunAway() {
-            Thunder = Thunder + 1; 
-            Sound = Sound + 1;
-            Mist = Mist + 1;                                                               
-
-        }
-        function RushAttack() {
-            Beast = Beast + 1; 
-            Wind = Wind + 1;
-        }
-        function Protect() {
-            Flame = Flame + 1; 
-            Love = Love + 1;
-            Flower = Flower + 1;
-            Stone = Stone + 1;
-            Sun = Sun + 1;
-        }
-        function Strategy() {
-            Insect = Insect + 1;
-            Water = Water + 1;
-            Serpent = Serpent + 1;
-        }
-
-
-
-
-        function checkIt() {
-            var whichOne = [];
-            whichOne[0] = Sun;
-            whichOne[1] = Water;
-            whichOne[2] = Flame;
-            whichOne[3] = Stone;
-            whichOne[4] = Wind;
-            whichOne[5] = Insect;
-            whichOne[6] = Flower;
-            whichOne[7] = Mist;
-            whichOne[8] = Love;
-            whichOne[9] = Thunder;
-            whichOne[10] = Beast;
-            whichOne[11] = Sound;
-            whichOne[12] = Serpent;
-            var max = Math.max(...whichOne);
-            var resultElem = document.getElementById("result");
-            if (max == whichOne[0]) {
-                resultElem.innerHTML = "As warm as the sun, and as strong as the flames—you are meant to use the <b>Sun Breathing</b> technique. You wish to make a change for the better, most likely because of someone else. You are talented, hardworking, and selfless—ready to fight demons head-on. As you go down this path, you will experience a lot of conflict and challenges, but you are destined to make a great impact on the world and the people around you.";  
-            } 
-            else if (max == whichOne[1]) {
-                resultElem.innerHTML = "Calm and steady—you are meant to use the <b>Water Breathing</b> technique. You are versatile but defensive, which may cause you to be a bit closed off. You may be burdened by the events of the past, but know that you are important. You are worth everything, whether or not you acknowledge that fact. The only thing setting you back is yourself."; 
-            } 
-            else if (max == whichOne[2]) {
-                resultElem.innerHTML = "With a heart as warm as fire, you are meant to use the <b>Flame Breathing</b> technique. You are passionate, kind, and determined to fight for what you stand for. You are an inspiration to others—a guiding light through the dark. You are strong, but not versatile. Regardless, you choose to persevere."; 
-            } 
-            else if (max == whichOne[3]) {
-                resultElem.innerHTML = "As powerful as the Earth itself, you are meant to use the <b>Stone Breathing</b> technique. You are strong—much more than others, yet underneath that strong exterior is a heart full of kindness and compassion. You are a guiding figure and a capable leader—always aiming to make a difference. You might have been hurt or betrayed in the past, but with fortitude as strong as stone, you remain calm and push forward."; 
-            } 
-            else if (max == whichOne[4]) {
-                resultElem.innerHTML = "With a spirit as driven as the winds, you are meant to use the <b>Wind Breathing</b> technique. You are rather impulsive, always preferring to fight head-on. You may struggle in your defenses—or yourself in general, which is why you choose to attack instead. You are strong, but you often take risks because you struggle to regulate yourself. Regardless, your loyalty and strength is what makes others place their trust in you."; 
-            } 
-            else if (max == whichOne[5]) {
-                resultElem.innerHTML = "As precise as a bug's sting—you are meant to use the <b>Insect Breathing</b> technique. You may not be that strong in comparison to others, but you are highly intelligent and effective. People tend to underestimate you, but this gives you the upper hand to strike unexpectedly. You are graceful, compassionate, and sharp—but beneath all of that is something hidden, which may or may not be due to a burden of the past."; 
-            } 
-            else if (max == whichOne[6]) {
-                resultElem.innerHTML = "As soft as a fragrant petal, you are meant to use the <b>Flower Breathing</b> technique. You are skilled, elegant, and intuitive, known for being kind but not weak. You may prefer precision and accuracy over brute force, which reflects your discipline, mastery, attention to detail. You may tend to sacrifice yourself quietly, but know that your sacrifices are not in vain. Much like a deadly flower with a delicate appearance, you are sweet and compassionate, but you are able strike with sudden lethality."; 
-            } 
-            else if (max == whichOne[7]) {
-                resultElem.innerHTML = "As unpredictable as the weather, you are meant to use the <b>Mist Breathing</b> technique. You are swift and volatile, an advantage you have over others. You are rather talented, always following your natural instincts. However, this may cause you to drift without direction. You may be a bit detached in comparison to others, but that does not make you cold or uncaring–more so calm and steady. As of the moment, you may struggle to define yourself beyond your ability, but as you grow, you will learn more about yourself."; 
-            } 
-            else if (max == whichOne[8]) {
-                resultElem.innerHTML = "As sweet as love at first sight, you are meant to use the <b>Love Breathing</b> technique. You are highly adaptable and flexible, and rather spontaneous. Many people admire you for your openness and your ideals, however, this leads people to perceive you as vulnerable and weak. Though, you are not to be underestimated, as you are strong and resilient when motivated and inspired by others."; 
-            } 
-            else if (max == whichOne[9]) {
-                resultElem.innerHTML = "Swift like lightning, you are meant to use the <b>Thunder Breathing</b> technique. You have a strong foundation and focus, and you are capable of overwhelming others in an instant. However, you tend to thrive mainly under pressure, because you are rather reactive. At times, you become predictable, but your speed makes up for it. You may suffer from self-doubt, but even so, you are decisive, quick-thinker. "; 
-            } 
-            else if (max == whichOne[10]) {
-                resultElem.innerHTML = "Wild like an animal, you are meant to use the <b>Beast Breathing</b> technique. You are highly instinctive and aware, however, this may cause you to become reckless and impulsive. This makes you unpredictable, which is your advantage against others. You may lack refinement and efficiency, but your resilience allows you to get past any situation."; 
-            } 
-            else if (max == whichOne[11]) {
-                resultElem.innerHTML = "In tune like a musical score, you are meant to use the <b>Sound Breathing</b> technique. You are perceptive, having exceptional rhythm and timing. You are confident, but also commanding–balancing flair with responsibility. Though, at times, you may become overconfident, or your pride may cause you to hide your pain behind bravado. Nevertheless, your strategic and intuitive thinking is what makes you incredibly reliable."; 
-            }
-            else if (max == whichOne[12]) {
-                resultElem.innerHTML = "As sly as a snake, you are meant to use the <b>Serpent Breathing</b> technique. You are cunning and strategic, which is what allows you to achieve your fixated goals. However, when pushed, you become incredibly decisive and ruthless. You prefer to be efficient and strict, which may instill fear in those around you. Your rigidity is both a strength and a weakness."; 
-            }
-
-        }
-        
-
-
-
-
-
-
-    </script>
+  </script>
 </body>

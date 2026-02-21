@@ -181,7 +181,7 @@ body {
 }
 
 .quiz {
-  max-width: 420px;
+  max-width: 550px;
   margin: 40px auto;
   padding: 30px;
   background: #1d040466;
@@ -239,7 +239,7 @@ body {
   background-color: #ffffff;
   border-radius: 50%;
   margin-right: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   display: inline-block;
   border: 2px solid #ffffff;
 }
@@ -530,9 +530,6 @@ body {
     line-height: 1.8;
     opacity: 0.95;
 }
-
-
-
 
 .quote-box {
     max-width: 720px;
