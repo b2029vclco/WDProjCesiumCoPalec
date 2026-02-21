@@ -15,7 +15,7 @@
           <li><a href="hashirainfo.html">Slayers</a></li>
           <li><a href="upper+muzan.html">Demons</a></li>
           <li><a href="breathingstyleinfo.html">Breathing Styles</a></li>
-          <li><a href="breathingquiz.html">Your Breathing Style</a></li>
+          <li><a href="breathingquiz.html">Your Breathing Style<span id="navBreathingStyle"/></a></li>
       </ul>
   </nav>
   <h1 class="header-box">A Guide to Demon Slaying</h1>
@@ -23,10 +23,9 @@
 
   <div class="content">
     <h2>「  KNYDEX  」</h2>
-    <br/>
     <h2>「  What is your breathing style?  」</h2>
 
-    <form id="dForm" method="post" onsubmit = "checkIt(event)" onreset = "confirmReset(event)">
+    <form id="dForm" method="post" onsubmit = "checkIt(event)">
 
       <div class="quiz">
       <div class="container">
@@ -49,7 +48,8 @@
             <input type="radio" name="Personality" id="both" value="both" >
             <span class="checkmark"></span>
             Both
-          </label>        
+          </label>
+          <br/>                  
         </div>
 
         <div class="radio-group">
@@ -83,7 +83,9 @@
             <input type="radio" name="Love" id="service" value="service">
             <span class="checkmark"></span>
             Service
-          </label>        
+          </label>  
+          <br/>   
+                         
         </div>
 
         <div class="radio-group">
@@ -105,7 +107,9 @@
             <input type="radio" name="Color" id="pastel" value="pastel">
             <span class="checkmark"></span>
             Light Pastel Colors
-          </label>     
+          </label>
+          <br/>   
+            
         </div>  
         
         <div class="radio-group">
@@ -139,7 +143,10 @@
             <input type="radio" name="Hobby" id="spendingtime" value="spendingtime">
             <span class="checkmark"></span>
             Spending time with loved ones
-          </label>             
+          </label>     
+          <br/>   
+
+
         </div>
 
         <div class="radio-group">
@@ -173,7 +180,10 @@
             <input type="radio" name="Lyrics" id="lyric5" value="lyric5">
             <span class="checkmark"></span>
             "The walls are being broken and we're ready for change"
-          </label>             
+          </label>            
+          <br/>   
+     
+
         </div>     
         
         <div class="radio-group">
@@ -201,12 +211,15 @@
             <input type="radio" name="Danger" id="strategy" value="strategy">
             <span class="checkmark"></span>
             Strategically find a way to get out of trouble
-          </label>               
-        </div>           
+          </label>       
+          <br/>   
+          <br/>                            
+        </div>       
       </div>
 
 
       <button type="submit">Show Results</button>
+      <br/>         
 
     </form>
     <h2>Result: <span id="result"></span></h2>
@@ -215,6 +228,7 @@
 
   <script>
 
+    //global tally variables
     var Water = 0;
     var Insect = 0;
     var Mist = 0;
@@ -228,6 +242,9 @@
     var Sun = 0;
     var Wind = 0;
     var Stone = 0;
+    var Result = "";
+
+    //functions to update tally variables 
 
     function Introvert() {
         Water = Water + 1; 
@@ -248,7 +265,7 @@
         Stone = Stone + 1;
         Sound = Sound + 1;
     }
-    function Touch() {
+    function Touch2() {
         Love = Love + 1;
         Beast = Beast + 1;
     }
@@ -367,14 +384,16 @@
         Serpent = Serpent + 1;
     }
 
+    //element names for questions
     const questionNames = ["Personality", "Love", "Color", "Hobby", "Lyrics", "Danger"];
 
+    //mapping radio buttons to functions to call
     const funcMapping = 
       {
         "introvert": Introvert,
         "extrovert": Extrovert,
         "both": Ambivert,
-        "touch": Touch,
+        "touch": Touch2,
         "words": Words,
         "time": Time,
         "gifts": Gifts,
@@ -398,7 +417,41 @@
         "strategy": Strategy,
       }
 
-    function addTotals() {
+    const breathingStyles = [
+        "Sun",
+        "Water",
+        "Flame",
+        "Stone",
+        "Wind",
+        "Insect",
+        "Flower",
+        "Mist",
+        "Love",
+        "Thunder",
+        "Beast",
+        "Sound",
+        "Serpent"
+      ];
+
+    const descriptions = [
+        "As warm as the sun, and as strong as the flames—you are meant to use the <b>Sun Breathing</b> technique. You wish to make a change for the better, most likely because of someone else. You are talented, hardworking, and selfless—ready to fight demons head-on. As you go down this path, you will experience a lot of conflict and challenges, but you are destined to make a great impact on the world and the people around you.",  
+        "Calm and steady—you are meant to use the <b>Water Breathing</b> technique. You are versatile but defensive, which may cause you to be a bit closed off. You may be burdened by the events of the past, but know that you are important. You are worth everything, whether or not you acknowledge that fact. The only thing setting you back is yourself.",
+        "With a heart as warm as fire, you are meant to use the <b>Flame Breathing</b> technique. You are passionate, kind, and determined to fight for what you stand for. You are an inspiration to others—a guiding light through the dark. You are strong, but not versatile. Regardless, you choose to persevere.",
+        "As powerful as the Earth itself, you are meant to use the <b>Stone Breathing</b> technique. You are strong—much more than others, yet underneath that strong exterior is a heart full of kindness and compassion. You are a guiding figure and a capable leader—always aiming to make a difference. You might have been hurt or betrayed in the past, but with fortitude as strong as stone, you remain calm and push forward.",
+        "With a spirit as driven as the winds, you are meant to use the <b>Wind Breathing</b> technique. You are rather impulsive, always preferring to fight head-on. You may struggle in your defenses—or yourself in general, which is why you choose to attack instead. You are strong, but you often take risks because you struggle to regulate yourself. Regardless, your loyalty and strength is what makes others place their trust in you.",
+        "As precise as a bug's sting—you are meant to use the <b>Insect Breathing</b> technique. You may not be that strong in comparison to others, but you are highly intelligent and effective. People tend to underestimate you, but this gives you the upper hand to strike unexpectedly. You are graceful, compassionate, and sharp—but beneath all of that is something hidden, which may or may not be due to a burden of the past.",
+        "As soft as a fragrant petal, you are meant to use the <b>Flower Breathing</b> technique. You are skilled, elegant, and intuitive, known for being kind but not weak. You may prefer precision and accuracy over brute force, which reflects your discipline, mastery, attention to detail. You may tend to sacrifice yourself quietly, but know that your sacrifices are not in vain. Much like a deadly flower with a delicate appearance, you are sweet and compassionate, but you are able strike with sudden lethality.",
+        "As unpredictable as the weather, you are meant to use the <b>Mist Breathing</b> technique. You are swift and volatile, an advantage you have over others. You are rather talented, always following your natural instincts. However, this may cause you to drift without direction. You may be a bit detached in comparison to others, but that does not make you cold or uncaring–more so calm and steady. As of the moment, you may struggle to define yourself beyond your ability, but as you grow, you will learn more about yourself.",
+        "As sweet as love at first sight, you are meant to use the <b>Love Breathing</b> technique. You are highly adaptable and flexible, and rather spontaneous. Many people admire you for your openness and your ideals, however, this leads people to perceive you as vulnerable and weak. Though, you are not to be underestimated, as you are strong and resilient when motivated and inspired by others.",
+        "Swift like lightning, you are meant to use the <b>Thunder Breathing</b> technique. You have a strong foundation and focus, and you are capable of overwhelming others in an instant. However, you tend to thrive mainly under pressure, because you are rather reactive. At times, you become predictable, but your speed makes up for it. You may suffer from self-doubt, but even so, you are decisive, quick-thinker. ",
+        "Wild like an animal, you are meant to use the <b>Beast Breathing</b> technique. You are highly instinctive and aware, however, this may cause you to become reckless and impulsive. This makes you unpredictable, which is your advantage against others. You may lack refinement and efficiency, but your resilience allows you to get past any situation.",
+        "In tune like a musical score, you are meant to use the <b>Sound Breathing</b> technique. You are perceptive, having exceptional rhythm and timing. You are confident, but also commanding–balancing flair with responsibility. Though, at times, you may become overconfident, or your pride may cause you to hide your pain behind bravado. Nevertheless, your strategic and intuitive thinking is what makes you incredibly reliable.",
+        "As sly as a snake, you are meant to use the <b>Serpent Breathing</b> technique. You are cunning and strategic, which is what allows you to achieve your fixated goals. However, when pushed, you become incredibly decisive and ruthless. You prefer to be efficient and strict, which may instill fear in those around you. Your rigidity is both a strength and a weakness."
+    ];
+
+
+    function computeResult() {
+      //clear tallies
       Water = 0;
       Insect = 0;
       Mist = 0;
@@ -412,17 +465,38 @@
       Sun = 0;
       Wind = 0;
       Stone = 0;
+      Result = "";
 
+      //call function of each selected radio button
       for (const key in funcMapping)
         if (document.getElementById(key).checked) {
           funcMapping[key]();                      
         }   
+
+
+      //max tally is the breathing style
+      let counts = [
+        Sun,
+        Water,
+        Flame,
+        Stone,
+        Wind,
+        Insect,
+        Flower,
+        Mist,
+        Love,
+        Thunder,
+        Beast,
+        Sound,
+        Serpent
+      ];
+      let index = counts.indexOf(Math.max(...counts));
+      Result = breathingStyles[index];
+
     }
 
-
-
+    //check if radio group has an answer
     function hasAnswer(name) {
-
       let choices = document.getElementsByName(name);
       for (const choice of choices)
       {
@@ -431,13 +505,12 @@
 
       }
       return false;
-
     }
 
-
-    function checkIt() {
-
+    //form submit action
+    function checkIt(event) {
       event.preventDefault();
+      //check if completely answered
       for (const name of questionNames)
         if (!hasAnswer(name))
         {
@@ -445,65 +518,49 @@
           return;
         }
 
-      addTotals();
-
-      var whichOne = [];
-      whichOne[0] = Sun;
-      whichOne[1] = Water;
-      whichOne[2] = Flame;
-      whichOne[3] = Stone;
-      whichOne[4] = Wind;
-      whichOne[5] = Insect;
-      whichOne[6] = Flower;
-      whichOne[7] = Mist;
-      whichOne[8] = Love;
-      whichOne[9] = Thunder;
-      whichOne[10] = Beast;
-      whichOne[11] = Sound;
-      whichOne[12] = Serpent;
-      var max = Math.max(...whichOne);
-      var resultElem = document.getElementById("result");
-      if (max == whichOne[0]) {
-          resultElem.innerHTML = "As warm as the sun, and as strong as the flames—you are meant to use the <b>Sun Breathing</b> technique. You wish to make a change for the better, most likely because of someone else. You are talented, hardworking, and selfless—ready to fight demons head-on. As you go down this path, you will experience a lot of conflict and challenges, but you are destined to make a great impact on the world and the people around you.";  
-      } 
-      else if (max == whichOne[1]) {
-          resultElem.innerHTML = "Calm and steady—you are meant to use the <b>Water Breathing</b> technique. You are versatile but defensive, which may cause you to be a bit closed off. You may be burdened by the events of the past, but know that you are important. You are worth everything, whether or not you acknowledge that fact. The only thing setting you back is yourself."; 
-      } 
-      else if (max == whichOne[2]) {
-          resultElem.innerHTML = "With a heart as warm as fire, you are meant to use the <b>Flame Breathing</b> technique. You are passionate, kind, and determined to fight for what you stand for. You are an inspiration to others—a guiding light through the dark. You are strong, but not versatile. Regardless, you choose to persevere."; 
-      } 
-      else if (max == whichOne[3]) {
-          resultElem.innerHTML = "As powerful as the Earth itself, you are meant to use the <b>Stone Breathing</b> technique. You are strong—much more than others, yet underneath that strong exterior is a heart full of kindness and compassion. You are a guiding figure and a capable leader—always aiming to make a difference. You might have been hurt or betrayed in the past, but with fortitude as strong as stone, you remain calm and push forward."; 
-      } 
-      else if (max == whichOne[4]) {
-          resultElem.innerHTML = "With a spirit as driven as the winds, you are meant to use the <b>Wind Breathing</b> technique. You are rather impulsive, always preferring to fight head-on. You may struggle in your defenses—or yourself in general, which is why you choose to attack instead. You are strong, but you often take risks because you struggle to regulate yourself. Regardless, your loyalty and strength is what makes others place their trust in you."; 
-      } 
-      else if (max == whichOne[5]) {
-          resultElem.innerHTML = "As precise as a bug's sting—you are meant to use the <b>Insect Breathing</b> technique. You may not be that strong in comparison to others, but you are highly intelligent and effective. People tend to underestimate you, but this gives you the upper hand to strike unexpectedly. You are graceful, compassionate, and sharp—but beneath all of that is something hidden, which may or may not be due to a burden of the past."; 
-      } 
-      else if (max == whichOne[6]) {
-          resultElem.innerHTML = "As soft as a fragrant petal, you are meant to use the <b>Flower Breathing</b> technique. You are skilled, elegant, and intuitive, known for being kind but not weak. You may prefer precision and accuracy over brute force, which reflects your discipline, mastery, attention to detail. You may tend to sacrifice yourself quietly, but know that your sacrifices are not in vain. Much like a deadly flower with a delicate appearance, you are sweet and compassionate, but you are able strike with sudden lethality."; 
-      } 
-      else if (max == whichOne[7]) {
-          resultElem.innerHTML = "As unpredictable as the weather, you are meant to use the <b>Mist Breathing</b> technique. You are swift and volatile, an advantage you have over others. You are rather talented, always following your natural instincts. However, this may cause you to drift without direction. You may be a bit detached in comparison to others, but that does not make you cold or uncaring–more so calm and steady. As of the moment, you may struggle to define yourself beyond your ability, but as you grow, you will learn more about yourself."; 
-      } 
-      else if (max == whichOne[8]) {
-          resultElem.innerHTML = "As sweet as love at first sight, you are meant to use the <b>Love Breathing</b> technique. You are highly adaptable and flexible, and rather spontaneous. Many people admire you for your openness and your ideals, however, this leads people to perceive you as vulnerable and weak. Though, you are not to be underestimated, as you are strong and resilient when motivated and inspired by others."; 
-      } 
-      else if (max == whichOne[9]) {
-          resultElem.innerHTML = "Swift like lightning, you are meant to use the <b>Thunder Breathing</b> technique. You have a strong foundation and focus, and you are capable of overwhelming others in an instant. However, you tend to thrive mainly under pressure, because you are rather reactive. At times, you become predictable, but your speed makes up for it. You may suffer from self-doubt, but even so, you are decisive, quick-thinker. "; 
-      } 
-      else if (max == whichOne[10]) {
-          resultElem.innerHTML = "Wild like an animal, you are meant to use the <b>Beast Breathing</b> technique. You are highly instinctive and aware, however, this may cause you to become reckless and impulsive. This makes you unpredictable, which is your advantage against others. You may lack refinement and efficiency, but your resilience allows you to get past any situation."; 
-      } 
-      else if (max == whichOne[11]) {
-          resultElem.innerHTML = "In tune like a musical score, you are meant to use the <b>Sound Breathing</b> technique. You are perceptive, having exceptional rhythm and timing. You are confident, but also commanding–balancing flair with responsibility. Though, at times, you may become overconfident, or your pride may cause you to hide your pain behind bravado. Nevertheless, your strategic and intuitive thinking is what makes you incredibly reliable."; 
-      }
-      else if (max == whichOne[12]) {
-          resultElem.innerHTML = "As sly as a snake, you are meant to use the <b>Serpent Breathing</b> technique. You are cunning and strategic, which is what allows you to achieve your fixated goals. However, when pushed, you become incredibly decisive and ruthless. You prefer to be efficient and strict, which may instill fear in those around you. Your rigidity is both a strength and a weakness."; 
-      }
-
+      showResult();
+      saveToLocal();
+      updateNavBreathingStyle();
     }
 
+    //compute result and show it
+    function showResult(){
+      computeResult();
+      document.getElementById("result").innerHTML = descriptions[breathingStyles.indexOf(Result)];
+    }
+
+
+    const KEY_ANSWERS = "KEY_ANSWERS";  
+
+    //save to local storage
+    function saveToLocal(){
+      let answers = [];
+      for (const key in funcMapping)
+        if (document.getElementById(key).checked)
+          answers.push(key);       
+           
+      localStorage.setItem(KEY_ANSWERS, JSON.stringify(answers));
+      localStorage.setItem(KEY_BREATHING_STYLE, Result);
+    }
+
+    //load answers from local storage
+    function loadAnswers(){
+      let answers = localStorage.getItem(KEY_ANSWERS);
+      if (answers){
+          if (!confirm("Do you want to load previous answers and result?"))
+            return;
+          answers = JSON.parse(answers);
+          for (const id of answers)
+            document.getElementById(id).checked = true;
+          showResult();
+          
+      }
+    }
+
+    loadAnswers();
+
   </script>
+
+  <script src="bottom.js" />
 </body>
+</html>
