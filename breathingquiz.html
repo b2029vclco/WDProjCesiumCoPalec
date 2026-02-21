@@ -26,113 +26,190 @@
   <br/>
   <h2>「  What is your breathing style?  」</h2>
 
-  <div class="quiz">
-   
-    <div class="question">
-      <h3>Are you an introvert or extrovert, or both?</h3>
-      <label>
-        <button type="button" class="option" onclick="Introvert()">Introvert</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Extrovert()">Extrovert</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Ambivert()">Both</button>
-      </label>
+  <form id="dForm" method="post" onsubmit = "confirmSubmission(event)" onreset = "confirmReset(event)">
+
+    <div class="quiz">
+    <div class="container">
+      <div class="radio-group">
+        <p class="question">Are you an introvert, extrovert, or both?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Personality" id="introvert">
+          <span class="checkmark"></span>
+          Introvert
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Personality" id="introvert">
+          <span class="checkmark"></span>
+          Extrovert
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Personality" id="introvert">
+          <span class="checkmark"></span>
+          Both
+        </label>        
+      </div>
+
+      <div class="radio-group">
+        <p class="question">What's your primary love language?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Love" id="introvert">
+          <span class="checkmark"></span>
+          Touch
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Love" id="introvert">
+          <span class="checkmark"></span>
+          Words
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Love" id="introvert">
+          <span class="checkmark"></span>
+          Time
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Love" id="introvert">
+          <span class="checkmark"></span>
+          Gifts
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Love" id="introvert">
+          <span class="checkmark"></span>
+          Service
+        </label>        
+      </div>
+
+      <div class="radio-group">
+        <p class="question">Favorite Color?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Color" id="introvert">
+          <span class="checkmark"></span>
+          Warm Colors
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Color" id="introvert">
+          <span class="checkmark"></span>
+          Cool Colors
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Color" id="introvert">
+          <span class="checkmark"></span>
+          Light Pastel Colors
+        </label>     
+      </div>  
+      
+      <div class="radio-group">
+        <p class="question">Which of these hobbies do you enjoy the most?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Hobby" id="introvert">
+          <span class="checkmark"></span>
+          Sleeping
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Hobby" id="introvert">
+          <span class="checkmark"></span>
+          Sports
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Hobby" id="introvert">
+          <span class="checkmark"></span>
+          Music
+        </label>     
+
+        <label class="custom-radio">
+          <input type="radio" name="Hobby" id="introvert">
+          <span class="checkmark"></span>
+          Reading/Writing
+        </label>     
+        
+        <label class="custom-radio">
+          <input type="radio" name="Hobby" id="introvert">
+          <span class="checkmark"></span>
+          Spending time with loved ones
+        </label>             
+      </div>
+
+      <div class="radio-group">
+        <p class="question">Which of these lyrics speak to you?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Lyrics" id="introvert">
+          <span class="checkmark"></span>
+          "Head in the clouds, but my gravity centered"
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Lyrics" id="introvert">
+          <span class="checkmark"></span>
+          "But if the story's over, why am I still writing pages?"
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Lyrics" id="introvert">
+          <span class="checkmark"></span>
+          "You and I have memories. Longer than the road that stretches out ahead."
+        </label>     
+
+        <label class="custom-radio">
+          <input type="radio" name="Lyrics" id="introvert">
+          <span class="checkmark"></span>
+          "Words are flowing out like endless rain into a paper cup"
+        </label>     
+        
+        <label class="custom-radio">
+          <input type="radio" name="Lyrics" id="introvert">
+          <span class="checkmark"></span>
+          "The walls are being broken and we're ready for change"
+        </label>             
+      </div>     
+      
+      <div class="radio-group">
+        <p class="question">If you and a loved one were in danger, what would you do?</p>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Danger" id="introvert">
+          <span class="checkmark"></span>
+          Run Away
+        </label>
+        
+        <label class="custom-radio">
+          <input type="radio" name="Danger" id="introvert">
+          <span class="checkmark"></span>
+          Rush and Attack
+        </label>
+
+        <label class="custom-radio">
+          <input type="radio" name="Danger" id="introvert">
+          <span class="checkmark"></span>
+          Protect your loved one
+        </label>     
+
+        <label class="custom-radio">
+          <input type="radio" name="Danger" id="introvert">
+          <span class="checkmark"></span>
+          Strategically find a way to get out of trouble
+        </label>               
+      </div>           
     </div>
 
 
-    <div class="question">
-      <h3>What’s your primary love language?</h3>
-      <label>
-        <button type="button" class="option" onclick="Touch()">Touch</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Words()">Words</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Time()">Time</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Gifts()">Gifts</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Service()">Service</button>
-      </label>
+    <button type="submit" onclick="checkIt()">Submit</button>
+
     </div>
-
-    <div class="question">
-      <h3>Favorite Color</h3>
-      <label>
-        <button type="button" class="option" onclick="WarmColor()">Warm Colors</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="CoolColor()">Cool Colors</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="LightPastel()">Light Pastel Colors</button>
-      </label>
-    </div>
-
-    <div class="question">
-      <h3>Which of these hobbies do you enjoy the most?</h3>
-      <label>
-        <button type="button" class="option" onclick="Sleeping()">Sleeping</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Sports()">Sports</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Music()">Music</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="ReadingWriting()">Reading/Writing</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="SpendingTime()">Spending time with loved ones</button>
-      </label>
-    </div>
-
-
-    <div class="question">
-      <h3>Which of these lyrics speak to you?</h3>
-      <label>
-        <button type="button" class="option" onclick="HeadinCloud()">"Head in the clouds, but my gravity centered"</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="ButIfStory()">"But if the story's over, why am I still writing pages?"</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="YouAndI()">"You and I have memories. Longer than the road that stretches out ahead."</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="WordsFlowingOut()">"Words are flowing out like endless rain into a paper cup"</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="TheWallsBroken()">"The walls are being broken and we're ready for change"</button>
-      </label>
-    </div>
-
-
-    <div class="question">
-      <h3>If you and a loved one were in danger, what would you do?</h3>
-      <label>
-        <button type="button" class="option" onclick="RunAway()">Run Away</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="RushAttack()">Rush attack</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Protect()">Protect your loved one</button>
-      </label>
-      <label>
-        <button type="button" class="option" onclick="Strategy()">Strategically find a way to get out of trouble</button>
-      </label>
-    </div>
-
-
-    
-    <button type="button" onclick="checkIt()">Submit</button>
+  </form>
 
     <h2>Result: <span id="result"></span></h2>
   </div>
@@ -140,6 +217,39 @@
 
 
     <script>
+      function confirmSubmission(event){
+        const userConfirmed = confirm("Are you sure you want to submit this form?");
+        if (userConfirmed)
+        {
+          event.preventDefault();
+          saveToLocal();
+          alert("Form submission saved.");
+
+          //reset the fields for new input
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;
+          document.getElementById('intern').checked = false;
+          document.getElementById('extern').checked = false;                                                            
+        }
+      
+        if (!userConfirmed) {
+            event.preventDefault();
+            alert("Form submission cancelled.");
+        }
+      } 
+
 
         var Water = 0;
         var Insect = 0;

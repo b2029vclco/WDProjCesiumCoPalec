@@ -205,6 +205,72 @@ body {
   display: none;
 }
 
+/* 1. Center the entire group */
+.radio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: sans-serif;
+  height: 100vh; /* Centered vertically on screen */
+}
+
+/* 2. Basic label styling */
+.custom-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  user-select: none;
+}
+
+/* 3. Hide the default browser radio button */
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* 4. Create the custom radio button (the circle) */
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid #ffffff;
+}
+
+/* 5. Change color on Hover */
+.custom-radio:hover input ~ .checkmark {
+  background-color: hsl(0, 0%, 0%);
+}
+
+/* 6. Change color when Selected */
+.custom-radio input:checked ~ .checkmark {
+  background-color: #c20000; /* Your primary color */
+  border-color: #c20000;
+  box-shadow: 0 0 0 3px rgba(114, 1, 1, 0.4);
+}
+
+/* 7. Add the little inner dot when selected */
+.checkmark:after {
+  content: "";
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(2, 2, 2);
+  margin: 5px; /* Centers the dot */
+}
+
+.custom-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
 .option {
   font-family: "Luminari", fantasy;
   display: block;
@@ -490,4 +556,6 @@ body {
 .banner img {
   width: 80rem;
 }
+
+
 
