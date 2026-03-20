@@ -46,3 +46,14 @@
 
 #### Narrative:
 #### The breathing style quiz aims to determine the most suitable breathing technique for the user through a series of questions. Taking this quiz will assist the user in their training and their journey to becoming a slayer. In the event of an emergency–such as closing the quiz tab, refreshing on accident, or losing WiFi, the form will automatically save your answers so you have progress to get back to.
+
+## FINAL MODIFICATION PROPOSAL
+
+#### Narrative:
+#### In the webpage of the breathing style quiz, every time you submit your quiz, there will be a list below that will show how many times you got each breathing style. For example, if you submit the quiz 4 times, with 2 water breathing styles, 1 wind style, and 1 stone style, this will all be displayed at the bottom with other breathing styles at 0. At the navigation bar, your latest result will be displayed beside the navigation button to access the quiz. 
+
+#### When you submitted a quiz, but you don't like your result, or someone else is taking it, you can choose to delete and reset all the data in the list back to 0, or delete certain results from the list.
+
+#### Quiz Layout:
+#### ![P1](all_images\Q4Wireframe.png)
+
