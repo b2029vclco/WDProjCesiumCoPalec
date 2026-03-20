@@ -55,5 +55,5 @@
 #### When you submitted a quiz, but you don't like your result, or someone else is taking it, you can choose to delete and reset all the data in the list back to 0, or delete certain results from the list.
 
 #### Quiz Layout:
-#### ![P1](all_images\Q4Wireframe.png)
+#### ![P1](https://github.com/b2029vclco/WDProjCesiumCoPalec/blob/main/all_images/Q4Wireframe.png?raw=true)
 
