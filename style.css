@@ -45,8 +45,8 @@ header h2 {
   max-width: 520px;
   margin: 6rem auto 4rem;
   padding: 1.8rem 3rem;
-  background: linear-gradient(145deg, #7a1b1b, #4a0c0c);
-  border-left: 5px solid rgba(241, 107, 107, 0.849);
+  background: linear-gradient(145deg, #6d0a0a, #4a0c0c);
+  border-left: 5px solid rgba(186, 42, 42, 0.849);
   border-radius: 18px;
   box-shadow: 0 20px 60px rgba(30, 10, 10, 0.615), inset 0 0 40px rgba(192, 10, 10, 0.26);
   text-align: center;
@@ -184,9 +184,9 @@ body {
   max-width: 550px;
   margin: 40px auto;
   padding: 30px;
-  background: #1d040466;
+  background: #3a05058b;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(92, 14, 14, 0.4);
+  box-shadow: 0 0 20px rgba(95, 12, 12, 0.933);
   font-family: "Luminari", fantasy;
 }
 
@@ -554,5 +554,51 @@ body {
   width: 80rem;
 }
 
+#tallyList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
 
+#tallyList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #2f0505, #5c0e0e);
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  font-size: 0.95rem;
+}
+
+.tally-name {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tally-count {
+  margin: 0 10px;
+  color: #ffb3b3;
+}
+
+.remove-btn {
+  background: #c20000;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #ff1a1a;
+  transform: scale(1.05);
+}
+
+.remove-btn:active {
+  transform: scale(0.95);
+}
 

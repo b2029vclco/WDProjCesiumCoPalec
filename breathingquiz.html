@@ -18,12 +18,7 @@
           <li><a href="breathingquiz.html">Your Breathing Style<span id="navBreathingStyle"/></a></li>
       </ul>
   </nav>
-  <h1 class="header-box">A Guide to Demon Slaying</h1>
-
-
-  <div class="content">
-    <h2>「  KNYDEX  」</h2>
-    <h2>「  What is your breathing style?  」</h2>
+  <h1 class="header-box">Your Breathing Style</h1>
 
     <form id="dForm" method="post" onsubmit = "checkIt(event)">
 
@@ -221,13 +216,14 @@
       <button type="submit">Show Results</button>
       <br/>         
       <h2>Result: <span id="result"></span></h2>
+      <h3>Tally:</h3>
+      <ul id="tallyList"></ul>
       </div>
 
     </form>
 
 
- 
-  </div>
+
 
 
 
@@ -532,6 +528,7 @@
     function showResult(){
       computeResult();
       document.getElementById("result").innerHTML = descriptions[breathingStyles.indexOf(Result)];
+      displayTallies();
     }
 
 
@@ -563,6 +560,69 @@
     }
 
     loadAnswers();
+
+    function displayTallies() {
+    const tallyList = document.getElementById("tallyList");
+    tallyList.innerHTML = "";
+    onclick="removeTally('${key}')"
+
+    const tallies = {
+      Water, Insect, Mist, Serpent, Flower,
+      Flame, Love, Sound, Beast, Thunder,
+      Sun, Wind, Stone
+    };
+
+    for (let key in tallies) {
+      if (tallies[key] > 0) {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+          <span class="tally-name">${key}</span>: 
+          <span class="tally-count">${tallies[key]}</span>
+          <button class="remove-btn" onclick="removeTally('${key}')">REMOVE</button>
+        `;
+
+        tallyList.appendChild(li);
+      }
+    }
+  }
+
+    function removeTally(type) {
+      switch(type) {
+        case "Water": if (Water > 0) Water--; break;
+        case "Insect": if (Insect > 0) Insect--; break;
+        case "Mist": if (Mist > 0) Mist--; break;
+        case "Serpent": if (Serpent > 0) Serpent--; break;
+        case "Flower": if (Flower > 0) Flower--; break;
+        case "Flame": if (Flame > 0) Flame--; break;
+        case "Love": if (Love > 0) Love--; break;
+        case "Sound": if (Sound > 0) Sound--; break;
+        case "Beast": if (Beast > 0) Beast--; break;
+        case "Thunder": if (Thunder > 0) Thunder--; break;
+        case "Sun": if (Sun > 0) Sun--; break;
+        case "Wind": if (Wind > 0) Wind--; break;
+        case "Stone": if (Stone > 0) Stone--; break;
+      }
+
+      updateAfterChange();
+    }
+
+    function updateAfterChange() {
+      let counts = [
+        Sun, Water, Flame, Stone, Wind,
+        Insect, Flower, Mist, Love,
+        Thunder, Beast, Sound, Serpent
+      ];
+
+      let index = counts.indexOf(Math.max(...counts));
+      Result = breathingStyles[index];
+
+      document.getElementById("result").innerHTML =
+        descriptions[index];
+
+      displayTallies();
+}
+
 
   </script>
 
