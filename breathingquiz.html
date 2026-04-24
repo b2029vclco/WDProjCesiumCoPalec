@@ -20,9 +20,9 @@
   </nav>
   <h1 class="header-box">Your Breathing Style</h1>
 
-    <form id="dForm" method="post" onsubmit = "checkIt(event)">
+  <form id="dForm" method="post" onsubmit = "checkIt(event)">
 
-      <div class="quiz">
+    <div class="quiz">
       <div class="container">
         <div class="radio-group">
           <p class="question">Are you an introvert, extrovert, or both?</p>
@@ -80,7 +80,7 @@
             Service
           </label>  
           <br/>   
-                         
+                        
         </div>
 
         <div class="radio-group">
@@ -177,7 +177,7 @@
             "The walls are being broken and we're ready for change"
           </label>            
           <br/>   
-     
+    
 
         </div>     
         
@@ -215,18 +215,19 @@
 
       <button type="submit">Show Results</button>
       <br/>         
-      <h2>Result: <span id="result"></span></h2>
+      <h2>Result: <br/> <span id="result"></span></h2>
+
+      <h3>History:</h3>
+      <ul id="historyList"></ul>
+
       <h3>Tally:</h3>
       <ul id="tallyList"></ul>
-      </div>
 
-    </form>
+    </div>
 
+  </form>
 
-
-
-
-
+  <script src="bottom.js"></script>
   <script>
 
     //global tally variables
@@ -315,7 +316,7 @@
     }                 
     function Sleeping() {
         Mist = Mist + 1; 
-        Thunder = 0;
+        Thunder = Thunder + 1;
     }
     function Sports() {
         Beast = Beast + 1; 
@@ -528,11 +529,7 @@
     function showResult(){
       computeResult();
       document.getElementById("result").innerHTML = descriptions[breathingStyles.indexOf(Result)];
-      displayTallies();
     }
-
-
-    const KEY_ANSWERS = "KEY_ANSWERS";  
 
     //save to local storage
     function saveToLocal(){
@@ -540,92 +537,115 @@
       for (const key in funcMapping)
         if (document.getElementById(key).checked)
           answers.push(key);       
-           
-      localStorage.setItem(KEY_ANSWERS, JSON.stringify(answers));
-      localStorage.setItem(KEY_BREATHING_STYLE, Result);
+      
+      //store as an array of objects with answers, result, and timestamp
+      let history = JSON.parse(localStorage.getItem(KEY_HISTORY)) || [];
+      history.push({ answers: answers, result: Result, timestamp: new Date().toISOString() });
+      localStorage.setItem(KEY_HISTORY, JSON.stringify(history));
+
+      showHistory();
     }
 
-    //load answers from local storage
-    function loadAnswers(){
-      let answers = localStorage.getItem(KEY_ANSWERS);
-      if (answers){
-          if (!confirm("Do you want to load previous answers and result?"))
-            return;
-          answers = JSON.parse(answers);
-          for (const id of answers)
-            document.getElementById(id).checked = true;
-          showResult();
-          
-      }
-    }
 
-    loadAnswers();
-
-    function displayTallies() {
-    const tallyList = document.getElementById("tallyList");
-    tallyList.innerHTML = "";
-    onclick="removeTally('${key}')"
-
-    const tallies = {
-      Water, Insect, Mist, Serpent, Flower,
-      Flame, Love, Sound, Beast, Thunder,
-      Sun, Wind, Stone
-    };
-
-    for (let key in tallies) {
-      if (tallies[key] > 0) {
+    //show history from local storage
+    function showHistory() {
+      let history = JSON.parse(localStorage.getItem(KEY_HISTORY)) || [];
+      const historyList = document.getElementById("historyList");
+      historyList.innerHTML = "";
+      //add list items in reverse order (most recent first)
+      for (let index = history.length - 1; index >= 0; index--) {
+        const entry = history[index];
         const li = document.createElement("li");
-
         li.innerHTML = `
-          <span class="tally-name">${key}</span>: 
-          <span class="tally-count">${tallies[key]}</span>
-          <button class="remove-btn" onclick="removeTally('${key}')">REMOVE</button>
+          <span class="tally-name">${entry.result}</span>&nbsp; 
+          <span class="tally-count">${new Date(entry.timestamp).toLocaleString()}</span>
+          <button type="button" class="remove-btn" onclick="updateHistory(${index})">LOAD</button>
+          <button type="button" class="remove-btn" onclick="removeHistory(${index})">REMOVE</button>
         `;
-
-        tallyList.appendChild(li);
+        historyList.appendChild(li);
       }
-    }
-  }
-
-    function removeTally(type) {
-      switch(type) {
-        case "Water": if (Water > 0) Water--; break;
-        case "Insect": if (Insect > 0) Insect--; break;
-        case "Mist": if (Mist > 0) Mist--; break;
-        case "Serpent": if (Serpent > 0) Serpent--; break;
-        case "Flower": if (Flower > 0) Flower--; break;
-        case "Flame": if (Flame > 0) Flame--; break;
-        case "Love": if (Love > 0) Love--; break;
-        case "Sound": if (Sound > 0) Sound--; break;
-        case "Beast": if (Beast > 0) Beast--; break;
-        case "Thunder": if (Thunder > 0) Thunder--; break;
-        case "Sun": if (Sun > 0) Sun--; break;
-        case "Wind": if (Wind > 0) Wind--; break;
-        case "Stone": if (Stone > 0) Stone--; break;
-      }
-
-      updateAfterChange();
+      //also show the tallies
+      displayTallies(history);
     }
 
-    function updateAfterChange() {
-      let counts = [
-        Sun, Water, Flame, Stone, Wind,
-        Insect, Flower, Mist, Love,
-        Thunder, Beast, Sound, Serpent
-      ];
+    //load the answers of a history entry and scroll to the top
+    function updateHistory(index) {
+      loadAnswers(index);
+      window.scrollTo(0, 0);
+    }
 
-      let index = counts.indexOf(Math.max(...counts));
-      Result = breathingStyles[index];
+    //delete a history entry given the index and update the display
+    function removeHistory(index) {
+      if (!confirm("Are you sure you want to remove this entry?"))
+        return;
+      let history = JSON.parse(localStorage.getItem(KEY_HISTORY)) || [];
+      history.splice(index, 1);
+      localStorage.setItem(KEY_HISTORY, JSON.stringify(history));
+      showHistory();
+      updateNavBreathingStyle();
+    }
 
-      document.getElementById("result").innerHTML =
-        descriptions[index];
 
-      displayTallies();
-}
+    //load answers from history given the index
+    function loadAnswers(index) {
+      let history = JSON.parse(localStorage.getItem(KEY_HISTORY)) || [];
 
+      if (history[index] && history[index].answers) {
+        let answers = history[index].answers;
+
+        //clear all radio buttons first
+        for (const key in funcMapping)
+          document.getElementById(key).checked = false;
+
+        //check the radio buttons of the selected history entry
+        for (const id of answers)
+          document.getElementById(id).checked = true;
+
+        showResult();
+      }
+    }
+
+
+    //show the tallies on screen by counting the number of each breathing style in the history and sorting them in descending order
+    function displayTallies(history) {
+      const tallyList = document.getElementById("tallyList");
+      tallyList.innerHTML = "";
+
+      //create a map of breathing style to count
+      const tallyMap = {}
+      for (const entry of history) {
+        if (!tallyMap[entry.result]) {
+          tallyMap[entry.result] = 0;
+        }
+        tallyMap[entry.result]++;
+      }
+
+      //convert map to array of objects and sort by count in descending order
+      const tallyArray = [];
+      for (const style in tallyMap) {
+        tallyArray.push({ style: style, count: tallyMap[style] } );
+      }
+      tallyArray.sort((a, b) => b.count - a.count);
+
+      //add list items for each breathing style with count > 0
+      for (const tallyEntry of tallyArray) {
+        if (tallyEntry.count > 0) {
+          const li = document.createElement("li");
+
+          li.innerHTML = `
+            <span class="tally-name">${tallyEntry.style}</span>: 
+            <span class="tally-count">${tallyEntry.count}</span>
+          `;
+
+          tallyList.appendChild(li);
+        }
+      }
+    }
+
+    //show history on page load
+    showHistory();
 
   </script>
 
-  <script src="bottom.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 .main {
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
   margin: 0;
   padding: 0;
   background:linear-gradient(rgba(35, 5, 5, 0.85),rgba(90, 15, 15, 0.85)),url(all_images/background.jpg);
@@ -74,6 +74,9 @@ nav ul li {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: rgba(25, 5, 5, 0.85);
   backdrop-filter: blur(6px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
@@ -187,7 +190,7 @@ body {
   background: #3a05058b;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(95, 12, 12, 0.933);
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
 }
 
 .question {
@@ -272,7 +275,7 @@ body {
 }
 
 .option {
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
   display: block;
   padding: 14px 16px;
   margin-bottom: 12px;
@@ -301,7 +304,7 @@ body {
 }
 
 .quiz button {
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
   width: 100%;
   padding: 14px;
   background: linear-gradient(135deg, #2f0505, #5c0e0e);
@@ -331,7 +334,7 @@ body {
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.471);
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -404,7 +407,7 @@ body {
   border-radius: 22px;
   padding: 28px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.584);
-  font-family: "Luminari", fantasy;
+  font-family: "Luminari", "Palatino Linotype",  fantasy;
 }
 
 .info-top {
@@ -554,13 +557,13 @@ body {
   width: 80rem;
 }
 
-#tallyList {
+#tallyList, #historyList {
   list-style: none;
   padding: 0;
   margin-top: 20px;
 }
 
-#tallyList li {
+#tallyList li, #historyList li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -572,15 +575,28 @@ body {
   font-size: 0.95rem;
 }
 
-.tally-name {
+#historyList .tally-name {
   font-weight: bold;
   letter-spacing: 1px;
+  display: inline-block;
+  width: 50%;
+}
+
+#tallyList .tally-name {
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  width: 50%;
 }
 
 .tally-count {
   margin: 0 10px;
   color: #ffb3b3;
+  white-space: nowrap;
+  width: 50%
 }
+
+
 
 .remove-btn {
   background: #c20000;
